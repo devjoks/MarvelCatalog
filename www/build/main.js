@@ -39,11 +39,10 @@ SeriePage = __decorate([
         selector: 'page-serie',template:/*ion-inline-start:"C:\Users\Usuario\Documents\GitProject\MarvelCatalog\src\pages\serie\serie.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>{{ dbComic._Comic.title }}</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content class="card-background-page">\n    <div *ngFor="let serie of _dbComic._Serie">\n  \n        <ion-card class="bg_image">\n            <img src="{{ serie.thumbnail[\'path\'] }}.{{ serie.thumbnail[\'extension\'] }}"/>\n          </ion-card>\n          <ion-grid class="contentChara">\n            <ion-row class="imageandtextOneChara">\n              <ion-col col-4>\n                <ion-card class="miniCharaIMG">\n                  <img src="{{ serie.thumbnail[\'path\'] }}.{{ serie.thumbnail[\'extension\'] }}"/>\n                </ion-card>      \n              </ion-col>\n              <ion-col col-8 >\n                  <h2 class="CharaTitle" >{{ serie.title }}</h2>\n                  <small><b></b></small>\n              </ion-col>\n            </ion-row>\n            <ion-row> \n              <ion-col col-12>\n                <h3 text-center>Series</h3>\n                <ion-list col-12 *ngIf="serie.comics.available > 0">\n                  <ion-item class="serieTitle" *ngFor="let serie of serie.comics.items">\n                    <h2>{{ serie.name }}</h2>\n                  </ion-item>\n                </ion-list>\n                <ion-list col-12 *ngIf="serie.comics.available == 0">\n                    <ion-item>\n                      <h2>No data - Series</h2>\n                    </ion-item>\n                  </ion-list>\n                </ion-col>\n              </ion-row>\n              <ion-row> \n                  <ion-col col-12>\n                    <h3 text-center>Stories</h3>\n                    <ion-list col-12 *ngIf="serie.stories.available > 0">\n                      <ion-item class="serieTitle" *ngFor="let serie of serie.stories.items">\n                        <h2>{{ serie.name }}</h2>\n                        <p>{{ serie.type }}</p>\n                      </ion-item>\n                    </ion-list>\n                    <ion-list col-12 *ngIf="serie.stories.available == 0">\n                        <ion-item>\n                          <h2>No data - Series</h2>\n                        </ion-item>\n                      </ion-list>\n                    </ion-col>\n                  </ion-row>\n            </ion-grid>      \n    </div>\n  \n  </ion-content>'/*ion-inline-end:"C:\Users\Usuario\Documents\GitProject\MarvelCatalog\src\pages\serie\serie.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__providers_comic_service_comic_service__["a" /* ComicServiceProvider */]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_comic_service_comic_service__["a" /* ComicServiceProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_comic_service_comic_service__["a" /* ComicServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_comic_service_comic_service__["a" /* ComicServiceProvider */]) === "function" && _c || Object])
 ], SeriePage);
 
+var _a, _b, _c;
 //# sourceMappingURL=serie.js.map
 
 /***/ }),
@@ -294,13 +293,7 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
-                links: [
-                    { loadChildren: '../pages/character/character.module#CharacterPageModule', name: 'CharacterPage', segment: 'character', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/serie/serie.module#SeriePageModule', name: 'SeriePage', segment: 'serie', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/comic/comic.module#MoviePageModule', name: 'ComicPage', segment: 'comic', priority: 'low', defaultHistory: [] }
-                ]
-            }),
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */]),
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
         entryComponents: [
