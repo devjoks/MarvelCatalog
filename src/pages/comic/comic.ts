@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { CharacterPage } from '../character/character';
+import { SeriePage } from '../serie/serie';
 import { ComicServiceProvider } from '../../providers/comic-service/comic-service';
 
 @IonicPage()
@@ -19,10 +22,19 @@ export class ComicPage {
                   dbComic.loadComic(this._dbComic["id"]);
     }
   
-    pushPage(_dbComic){
-      this.navCtrl.push(ComicPage,{
-        dbComic: _dbComic
-      });
+    pushPage(_Comicdb, _URL, type){
+      if(type == "Chara"){
+        this.navCtrl.push(CharacterPage,{
+          dbComic: _Comicdb,
+          URLChara: _URL
+        });
+      }
+      else if(type == "Serie"){
+        this.navCtrl.push(SeriePage,{
+          dbComic: _Comicdb,
+          URLSerie: _URL
+        });
+      }
     }
 
     ionViewDidLoad() {

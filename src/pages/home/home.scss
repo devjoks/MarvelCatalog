@@ -18,9 +18,13 @@ page-home {
         .card-title {
             position: absolute;
             bottom: 0;
-            font-size: 1.2rem;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.5);
+            h3{
+                overflow: inherit ;
+                text-overflow: inherit ;
+                white-space: normal;
+            }
         }
         h3, h4{
             color: #fff;

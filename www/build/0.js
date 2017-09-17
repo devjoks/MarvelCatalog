@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 266:
+/***/ 269:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MoviePageModule", function() { return MoviePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SeriePageModule", function() { return SeriePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comic__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__serie__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MoviePageModule = (function () {
-    function MoviePageModule() {
+var SeriePageModule = (function () {
+    function SeriePageModule() {
     }
-    return MoviePageModule;
+    return SeriePageModule;
 }());
-MoviePageModule = __decorate([
+SeriePageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__comic__["a" /* ComicPage */],
+            __WEBPACK_IMPORTED_MODULE_2__serie__["a" /* SeriePage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__comic__["a" /* ComicPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__serie__["a" /* SeriePage */]),
         ],
     })
-], MoviePageModule);
+], SeriePageModule);
 
-//# sourceMappingURL=comic.module.js.map
+//# sourceMappingURL=serie.module.js.map
 
 /***/ })
 

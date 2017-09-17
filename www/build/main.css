@@ -25290,9 +25290,69 @@ ion-content ::-webkit-scrollbar-thumb {
   animation-name: fadeInLeft;
 }
 
-page-comic .card-background-page ion-card {
+page-character .card-background-page h3 {
+  text-align: center;
+}
+
+page-character .card-background-page ion-card {
   position: relative;
   text-align: center;
+  margin: 0;
+}
+
+page-character .card-background-page .bg_image {
+  height: 12.5rem;
+  width: 100%;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+
+page-character .card-background-page .bg_image img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+page-character .card-background-page .contentChara {
+  position: relative;
+  top: -9.375rem;
+}
+
+page-character .card-background-page .imageandtextOneChara {
+  padding-left: 1rem;
+}
+
+page-character .card-background-page .imageandtextOneChara .miniCharaIMG {
+  top: 4.6875rem;
+  width: 9.375rem;
+}
+
+page-character .card-background-page .imageandtextOneChara .CharaTitle {
+  margin-top: 10rem;
+  font-weight: bold;
+  font-size: 2rem;
+  font-size-adjust: 2rem;
+  color: #313131;
+}
+
+page-character .card-background-page .serieTitle h2 {
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: normal;
+  font-size: 1.5rem;
+}
+
+page-comic .card-background-page h3 {
+  text-align: center;
+}
+
+page-comic .card-background-page ion-card {
+  position: relative;
   margin: 0;
 }
 
@@ -25310,19 +25370,6 @@ page-comic .card-background-page .bg_image img {
   position: absolute;
   width: 100%;
   height: auto;
-}
-
-page-comic .card-background-page .card-title {
-  position: absolute;
-  bottom: 0;
-  font-size: 1.2rem;
-  width: 100%;
-  color: #fff;
-  text-align: left;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
 }
 
 page-comic .card-background-page .contentComic {
@@ -25354,6 +25401,17 @@ page-comic .card-background-page .dataComic p {
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
 }
 
+page-comic .card-background-page .link {
+  color: #008DB8;
+}
+
+page-comic .card-background-page .serieTitle h2 {
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: normal;
+  font-size: 1.5rem;
+}
+
 page-home .card-background-page ion-card {
   position: relative;
   text-align: center;
@@ -25373,9 +25431,14 @@ page-home .card-background-page img {
 page-home .card-background-page .card-title {
   position: absolute;
   bottom: 0;
-  font-size: 1.2rem;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+page-home .card-background-page .card-title h3 {
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: normal;
 }
 
 page-home .card-background-page h3, page-home .card-background-page h4 {
@@ -25392,4 +25455,61 @@ page-home .item-inner {
 
 page-home ion-list ion-item {
   padding: 0 !important;
+}
+
+page-serie .card-background-page h3 {
+  text-align: center;
+}
+
+page-serie .card-background-page ion-card {
+  position: relative;
+  text-align: center;
+  margin: 0;
+}
+
+page-serie .card-background-page .bg_image {
+  height: 12.5rem;
+  width: 100%;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+
+page-serie .card-background-page .bg_image img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+page-serie .card-background-page .contentChara {
+  position: relative;
+  top: -9.375rem;
+}
+
+page-serie .card-background-page .imageandtextOneChara {
+  padding-left: 1rem;
+}
+
+page-serie .card-background-page .imageandtextOneChara .miniCharaIMG {
+  top: 4.6875rem;
+  width: 9.375rem;
+}
+
+page-serie .card-background-page .imageandtextOneChara .CharaTitle {
+  margin-top: 10rem;
+  font-weight: bold;
+  font-size: 2rem;
+  font-size-adjust: 2rem;
+  color: #313131;
+}
+
+page-serie .card-background-page .serieTitle h2 {
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: normal;
+  font-size: 1.5rem;
 }

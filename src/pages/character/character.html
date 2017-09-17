@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ dbComic._Comic.title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <div *ngFor="let chara of _dbComic._Chara">
+
+      <ion-card class="bg_image">
+          <img src="{{ chara.thumbnail['path'] }}.{{ chara.thumbnail['extension'] }}"/>
+        </ion-card>
+        <ion-grid class="contentChara">
+          <ion-row class="imageandtextOneChara">
+            <ion-col col-4>
+              <ion-card class="miniCharaIMG">
+                <img src="{{ chara.thumbnail['path'] }}.{{ chara.thumbnail['extension'] }}"/>
+              </ion-card>      
+            </ion-col>
+            <ion-col col-8 >
+                <h2 class="CharaTitle" >{{ chara.name }}</h2>
+                <small><b></b></small>
+            </ion-col>
+          </ion-row>
+          <ion-row> 
+            <ion-col col-12>
+              <h3 text-center>Series</h3>
+              <ion-list col-12 *ngIf="chara.series.available > 0">
+                <ion-item class="serieTitle" *ngFor="let serie of chara.series.items">
+                  <h2>{{ serie.name }}</h2>
+                </ion-item>
+              </ion-list>
+              <ion-list col-12 *ngIf="chara.series.available == 0">
+                  <ion-item>
+                    <h2>No data - Series</h2>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+      </ion-grid>      
+  </div>
+
+</ion-content>

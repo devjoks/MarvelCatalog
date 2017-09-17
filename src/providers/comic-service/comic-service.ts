@@ -9,8 +9,11 @@ export class ComicServiceProvider {
 
   private listComic:any[] = [];
   private listComicSearch:any[] = [];
-  private _Comic:any[] = [];
 
+  private _Comic:any[] = [];
+  private _Chara:any[] = [];
+  private _Serie:any[] = [];
+  
   cargo: any;
   private _ts = 1;
   private _APIPrivate: String = "bf7f9221d44271a914312792b932f9228008508f";
@@ -38,7 +41,6 @@ export class ComicServiceProvider {
       this.http.get(this._URLBase + "?format=comic&formatType=comic&hasDigitalIssue=true&ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash + "&limit=50&offset=" + this._offset*(index-1))
       .map( res => res.json())
       .subscribe (data => {
-        console.log(data.data.results);
         this.addMoreComic(data.data.results);
         resolve(this.cargo);
       });
@@ -50,7 +52,24 @@ export class ComicServiceProvider {
     .map( res => res.json())
     .subscribe (data => {
       this._Comic = data.data.results;
-      // console.log(this._Comic);
+    });
+  }
+
+  public loadChara(_URLChara: String){
+    console.log(_URLChara);
+    this.http.get(_URLChara + "?ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash)
+    .map( res => res.json())
+    .subscribe (data => {
+      this._Chara = data.data.results;
+    });
+  }
+
+  public loadSerie(_ULRSerie: String){
+    console.log(_ULRSerie);
+    this.http.get(_ULRSerie + "?ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash)
+    .map( res => res.json())
+    .subscribe (data => {
+      this._Serie = data.data.results;
     });
   }
 

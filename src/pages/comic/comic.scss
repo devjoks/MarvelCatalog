@@ -1,8 +1,10 @@
 page-comic {
     .card-background-page {
+        h3{
+            text-align: center;
+        }
         ion-card {
             position: relative;
-            text-align: center;
             margin: 0;
         }
         .bg_image{
@@ -21,18 +23,6 @@ page-comic {
                 // -ms-transform: translate(0,-50%);
                 //     transform: translate(0,-50%);
             }
-        }
-        .card-title {
-            position: absolute;
-            bottom: 0;
-            font-size: 1.2rem;
-            width: 100%;
-            color: #fff;
-            text-align: left;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 2rem;
         }
         .contentComic{
             position: relative;
@@ -60,6 +50,17 @@ page-comic {
                 -webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
                 -moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
                 box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
+            }
+        }
+        .link{
+            color: #008DB8;
+        }
+        .serieTitle{
+            h2{
+                overflow: inherit ;
+                text-overflow: inherit ;
+                white-space: normal;
+                font-size: 1.5rem;
             }
         }
     }

@@ -1,0 +1,56 @@
+page-serie {
+    .card-background-page {
+        h3{
+            text-align: center;
+        }
+        ion-card {
+            position: relative;
+            text-align: center;
+            margin: 0;
+        }
+        .bg_image{
+            height: 12.5rem;
+            width:100%;
+            -webkit-filter: blur(1px);
+            -moz-filter: blur(1px);
+            -o-filter: blur(1px);
+            -ms-filter: blur(1px);
+            filter: blur(1px);
+            img{
+                position: absolute;
+                width: 100%;
+                height: auto;    
+                -webkit-transform: translate(0,-50%);
+                -ms-transform: translate(0,-50%);
+                    transform: translate(0,-50%);
+            }
+        }
+        .contentChara{
+            position: relative;
+            top:-9.375rem;
+        }
+        .imageandtextOneChara{
+            padding-left: 1rem;
+            .miniCharaIMG{
+                top: 4.6875rem;
+                width: 9.375rem;
+            }
+            .CharaTitle{
+                margin-top: 10rem;
+                font-weight: bold;
+                font-size: 2rem;
+                font-size-adjust: 2rem;
+                color: #313131;
+                // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+        }
+        .serieTitle{
+            h2{
+                overflow: inherit ;
+                text-overflow: inherit ;
+                white-space: normal;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{ dbComic._Comic.title }}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="card-background-page">
+    <div *ngFor="let serie of _dbComic._Serie">
+  
+        <ion-card class="bg_image">
+            <img src="{{ serie.thumbnail['path'] }}.{{ serie.thumbnail['extension'] }}"/>
+          </ion-card>
+          <ion-grid class="contentChara">
+            <ion-row class="imageandtextOneChara">
+              <ion-col col-4>
+                <ion-card class="miniCharaIMG">
+                  <img src="{{ serie.thumbnail['path'] }}.{{ serie.thumbnail['extension'] }}"/>
+                </ion-card>      
+              </ion-col>
+              <ion-col col-8 >
+                  <h2 class="CharaTitle" >{{ serie.title }}</h2>
+                  <small><b></b></small>
+              </ion-col>
+            </ion-row>
+            <ion-row> 
+              <ion-col col-12>
+                <h3 text-center>Series</h3>
+                <ion-list col-12 *ngIf="serie.comics.available > 0">
+                  <ion-item class="serieTitle" *ngFor="let serie of serie.comics.items">
+                    <h2>{{ serie.name }}</h2>
+                  </ion-item>
+                </ion-list>
+                <ion-list col-12 *ngIf="serie.comics.available == 0">
+                    <ion-item>
+                      <h2>No data - Series</h2>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+              <ion-row> 
+                  <ion-col col-12>
+                    <h3 text-center>Stories</h3>
+                    <ion-list col-12 *ngIf="serie.stories.available > 0">
+                      <ion-item class="serieTitle" *ngFor="let serie of serie.stories.items">
+                        <h2>{{ serie.name }}</h2>
+                        <p>{{ serie.type }}</p>
+                      </ion-item>
+                    </ion-list>
+                    <ion-list col-12 *ngIf="serie.stories.available == 0">
+                        <ion-item>
+                          <h2>No data - Series</h2>
+                        </ion-item>
+                      </ion-list>
+                    </ion-col>
+                  </ion-row>
+            </ion-grid>      
+    </div>
+  
+  </ion-content>
