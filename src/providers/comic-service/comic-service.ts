@@ -12,7 +12,7 @@ export class ComicServiceProvider {
   private _Comic:any[] = [];
 
   cargo: any;
-  private _ts = Date();
+  private _ts = 1;
   private _APIPrivate: String = "bf7f9221d44271a914312792b932f9228008508f";
   private _APIPublic:String = "d00c1f1ebadaaa622e5580dfc0b95104";
   private _Hash:String = "";
@@ -34,11 +34,12 @@ export class ComicServiceProvider {
       return Promise.resolve(this.cargo);
     }
     return new Promise( resolve => {
+      console.log(this._URLBase + "?format=comic&formatType=comic&hasDigitalIssue=true&ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash + "&limit=50&offset=" + this._offset*(index-1));
       this.http.get(this._URLBase + "?format=comic&formatType=comic&hasDigitalIssue=true&ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash + "&limit=50&offset=" + this._offset*(index-1))
       .map( res => res.json())
       .subscribe (data => {
+        console.log(data.data.results);
         this.addMoreComic(data.data.results);
-        // console.log(data.data.results);
         resolve(this.cargo);
       });
     })

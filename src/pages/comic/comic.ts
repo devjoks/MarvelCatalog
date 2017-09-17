@@ -17,7 +17,6 @@ export class ComicPage {
                 public dbComic: ComicServiceProvider) {
                   this._dbComic = navParams.get("dbComic");
                   dbComic.loadComic(this._dbComic["id"]);
-                  // dbComic.loadRecommendation(this._dbComic["id"]);
     }
   
     pushPage(_dbComic){

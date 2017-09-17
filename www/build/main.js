@@ -499,12 +499,12 @@ var ComicServiceProvider = (function () {
         this.listComic = [];
         this.listComicSearch = [];
         this._Comic = [];
-        this._ts = "1";
+        this._ts = 1;
         this._APIPrivate = "bf7f9221d44271a914312792b932f9228008508f";
         this._APIPublic = "d00c1f1ebadaaa622e5580dfc0b95104";
         this._Hash = "";
         this._offset = 20;
-        this._URLBase = "http://gateway.marvel.com/v1/public/comics";
+        this._URLBase = "https://gateway.marvel.com/v1/public/comics";
         this.searchQuery = '';
         this.cargo = false;
         this._Hash = Object(__WEBPACK_IMPORTED_MODULE_3__assets_md5__["a" /* md5 */])(this._ts + "" + this._APIPrivate + "" + this._APIPublic);
@@ -515,11 +515,12 @@ var ComicServiceProvider = (function () {
             return Promise.resolve(this.cargo);
         }
         return new Promise(function (resolve) {
+            console.log(_this._URLBase + "?format=comic&formatType=comic&hasDigitalIssue=true&ts=" + _this._ts + "&apikey=" + _this._APIPublic + "&hash=" + _this._Hash + "&limit=50&offset=" + _this._offset * (index - 1));
             _this.http.get(_this._URLBase + "?format=comic&formatType=comic&hasDigitalIssue=true&ts=" + _this._ts + "&apikey=" + _this._APIPublic + "&hash=" + _this._Hash + "&limit=50&offset=" + _this._offset * (index - 1))
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
+                console.log(data.data.results);
                 _this.addMoreComic(data.data.results);
-                // console.log(data.data.results);
                 resolve(_this.cargo);
             });
         });
@@ -530,7 +531,7 @@ var ComicServiceProvider = (function () {
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
             _this._Comic = data.data.results;
-            console.log(_this._Comic);
+            // console.log(this._Comic);
         });
     };
     ComicServiceProvider.prototype.addMoreComic = function (_listComic) {
@@ -588,7 +589,6 @@ var ComicPage = ComicPage_1 = (function () {
         this.dbComic = dbComic;
         this._dbComic = navParams.get("dbComic");
         dbComic.loadComic(this._dbComic["id"]);
-        // dbComic.loadRecommendation(this._dbComic["id"]);
     }
     ComicPage.prototype.pushPage = function (_dbComic) {
         this.navCtrl.push(ComicPage_1, {
