@@ -1,0 +1,40 @@
+page-home {
+    .card-background-page {
+        ion-card {
+            position: relative;
+            text-align: center;
+            height: 12.5rem;
+            margin: 0;
+            width:100%;
+        }
+        img{
+            position: absolute;
+            width: 100%;
+            height: auto;    
+            -webkit-transform: translate(0,-50%);
+            -ms-transform: translate(0,-50%);
+                transform: translate(0,-50%);
+        }
+        .card-title {
+            position: absolute;
+            bottom: 0;
+            font-size: 1.2rem;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        h3, h4{
+            color: #fff;
+        }
+    }
+    // Remover padding de ion-item
+    .label {
+        margin: 0;
+     }
+     
+     .item-inner {
+        padding-right: 0px!important;
+     }
+     ion-list ion-item {
+        padding: 0 !important;
+    }
+}

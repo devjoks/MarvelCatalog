@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ dbComic._Comic.title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <div *ngFor="let comic of dbComic._Comic">
+
+      <ion-card class="bg_image">
+          <img src="{{ comic.thumbnail['path'] }}.{{ comic.thumbnail['extension'] }}"/>
+        </ion-card>
+        <ion-grid class="contentComic">
+          <ion-row class="imageandtextOneComic">
+            <ion-col col-4>
+              <ion-card class="miniComicIMG">
+                <img src="{{ comic.thumbnail['path'] }}.{{ comic.thumbnail['extension'] }}"/>
+              </ion-card>      
+            </ion-col>
+            <ion-col col-8 >
+                <h2 class="comicTitle" >{{ comic.title }}</h2>
+                <small><b></b></small>
+            </ion-col>
+          </ion-row>
+          <ion-row class="dataComic">
+              <ion-col col-4 text-center *ngFor="let price of comic.prices">
+                  {{ price.type }}:<br><ion-badge>${{ price.price }}</ion-badge>
+              </ion-col>
+              <!-- <ion-col col-4 text-center>Lanzamiento:<br><ion-badge>{{ comic.dates }}</ion-badge></ion-col> -->
+              <ion-col col-4 text-center>n° pages:<br><ion-badge>{{ comic.pageCount }}</ion-badge></ion-col>
+              <ion-col col-4 text-center *ngFor="let date of comic.dates">
+                <div *ngIf="date.type == 'onsaleDate'">
+                  OnSale Date:<br><ion-badge>{{ date.date | date }}</ion-badge>
+                </div>  
+                <!-- <div *ngIf="date.type == 'digitalPurchaseDate'">
+                    Fecha Compra Digital:<br><ion-badge>{{ date.date | date }}</ion-badge>
+                  </div>   -->
+              </ion-col>
+              <ion-col col-12>
+                  <h3>Description</h3>
+                  <p *ngIf="comic.description" padding text-justify>{{ comic.description }}</p>
+                  <p *ngIf="!comic.description" padding text-justify>No data description</p>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+                <h3>Serie</h3>
+              <ion-list>
+                <ion-item>
+                  <h2>{{ comic.series.name }}</h2>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>    
+          <ion-row>
+            <h3>Gallery</h3>
+            <ion-slides *ngIf="comic.images.length > 1" loop="true" slidesPerView="2">
+              <ion-slide *ngFor="let img of comic.images">
+                <img src="{{ img['path'] }}.{{ img['extension'] }}" imageViewer />
+              </ion-slide>
+            </ion-slides>
+            <ion-slides *ngIf="comic.images.length == 1" loop="false" slidesPerView="1">
+                <ion-slide *ngFor="let img of comic.images">
+                  <img src="{{ img['path'] }}.{{ img['extension'] }}" imageViewer />
+                </ion-slide>
+              </ion-slides>
+            </ion-row>
+          <ion-row> 
+              <h3>Characters</h3>
+              <ion-list col-12 *ngIf="comic.characters.available > 0">
+                <ion-item *ngFor="let character of comic.characters.items">
+                  <h2>{{ character.name }}</h2>
+                </ion-item>
+              </ion-list>
+              <ion-list col-12 *ngIf="comic.characters.available == 0">
+                  <ion-item>
+                    <h2>No data Characters</h2>
+                  </ion-item>
+                </ion-list>
+            </ion-row>
+            <ion-row> 
+            <h3>Creators</h3>
+            <ion-list col-12 *ngIf="comic.creators.available > 0">
+              <ion-item *ngFor="let creator of comic.creators.items">
+                <h2>{{ creator.name }}</h2>
+                <p>{{ creator.role }}</p>
+              </ion-item>
+            </ion-list>
+            <ion-list col-12 *ngIf="comic.creators.available == 0">
+                <ion-item>
+                  <h2>No data Creators</h2>
+                </ion-item>
+              </ion-list>
+          </ion-row>
+      </ion-grid>      
+  </div>
+
+</ion-content>

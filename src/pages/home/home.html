@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title *ngIf="!buttonClicked" >Catálogo de Comics</ion-title>
+    <ion-searchbar class="animated fadeInRight" (ionInput)="dbComic.getItems($event)" *ngIf="buttonClicked"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onButtonClick()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+    <ion-list class="item-content">
+        <ion-item class="itemComic" *ngFor="let comic of dbComic.listComicSearch; let i=index;">
+            <ion-card (click)="pushPage(comic)">
+              <img src="{{ comic.thumbnail['path'] }}.{{ comic.thumbnail['extension'] }}"/>
+                <ion-grid class="card-title">
+                  <ion-row >
+                    <h3 col-8 text-left>{{ comic.title }}</h3>
+                    <h4 col-4 text-right>{{ comic.release_date | slice: 0:4}}</h4>
+                  </ion-row>
+                </ion-grid>
+            </ion-card>
+      </ion-item>
+      
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </ion-content>
