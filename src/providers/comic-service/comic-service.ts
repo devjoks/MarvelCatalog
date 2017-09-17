@@ -12,7 +12,7 @@ export class ComicServiceProvider {
   private _Comic:any[] = [];
 
   cargo: any;
-  private _ts = "1";
+  private _ts = Date();
   private _APIPrivate: String = "bf7f9221d44271a914312792b932f9228008508f";
   private _APIPublic:String = "d00c1f1ebadaaa622e5580dfc0b95104";
   private _Hash:String = "";
