@@ -18,7 +18,7 @@ export class ComicServiceProvider {
   private _Hash:String = "";
   private _offset = 20;
 
-  private _URLBase: String = "http://gateway.marvel.com/v1/public/comics";
+  private _URLBase: String = "https://gateway.marvel.com/v1/public/comics";
   searchQuery: string = '';
   
   constructor(public http: Http) {
