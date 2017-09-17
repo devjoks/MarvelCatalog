@@ -56,7 +56,7 @@ export class ComicServiceProvider {
   }
 
   public loadChara(_URLChara: String){
-    console.log(_URLChara);
+    _URLChara = this.replaceHTTPtoHTTPS(_URLChara);
     this.http.get(_URLChara + "?ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash)
     .map( res => res.json())
     .subscribe (data => {
@@ -65,7 +65,7 @@ export class ComicServiceProvider {
   }
 
   public loadSerie(_ULRSerie: String){
-    console.log(_ULRSerie);
+    _ULRSerie = this.replaceHTTPtoHTTPS(_ULRSerie);
     this.http.get(_ULRSerie + "?ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash)
     .map( res => res.json())
     .subscribe (data => {
@@ -80,7 +80,10 @@ export class ComicServiceProvider {
   private initializeItems() {
     this.listComicSearch = this.listComic;
   }
-
+  private replaceHTTPtoHTTPS(_URL){
+    var _rHTTP = /http/gi;
+    return _URL.replace(_rHTTP,"https");
+  }
   public getItems(ev: any) {
 
     this.initializeItems();
