@@ -37,7 +37,6 @@ export class ComicServiceProvider {
       return Promise.resolve(this.cargo);
     }
     return new Promise( resolve => {
-      console.log(this._URLBase + "?format=comic&formatType=comic&hasDigitalIssue=true&ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash + "&limit=50&offset=" + this._offset*(index-1));
       this.http.get(this._URLBase + "?format=comic&formatType=comic&hasDigitalIssue=true&ts=" + this._ts + "&apikey=" + this._APIPublic + "&hash=" + this._Hash + "&limit=50&offset=" + this._offset*(index-1))
       .map( res => res.json())
       .subscribe (data => {
